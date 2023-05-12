@@ -8,11 +8,11 @@ import 'package:flutter_onboarding_screen/OnbordingData.dart';
 ///
 class IntroScreen extends StatefulWidget {
   final List<OnbordingData> onbordingDataList;
-  final MaterialPageRoute pageRoute;
-  IntroScreen(this.onbordingDataList, this.pageRoute);
+  final Function() onFinished;
+  IntroScreen(this.onbordingDataList, this.onFinished);
 
   void skipPage(BuildContext context) {
-    Navigator.push(context, pageRoute);
+    onFinished();
   }
 
   @override
